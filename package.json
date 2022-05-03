@@ -1,0 +1,53 @@
+{
+  "name": "js-tdd",
+  "version": "1.0.0",
+  "description": "A JavaScript with TDD boilerplate created in the 'JS com TDD na prática' course",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --bail --require @babel/register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch --require @babel/register",
+    "test:coverage": "nyc npm test",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "functions": 80,
+    "lines": 80,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpedroschmitz/js-tdd.git"
+  },
+  "keywords": [
+    "js",
+    "library",
+    "tdd"
+  ],
+  "author": "Joao Pedro Schmitz <jpedroschmitz@hotmail.com> (https://www.joaopedro.cc/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpedroschmitz/js-tdd/issues"
+  },
+  "homepage": "https://github.com/jpedroschmitz/js-tdd#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "husky": "^1.3.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
+  },
+  "dependencies": {}
+}
